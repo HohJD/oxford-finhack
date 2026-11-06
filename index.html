@@ -58,134 +58,215 @@
 </script>
 <style>
 :root{
-  --bg:#FCFCFB;--ink:#161616;--mute:#6B6B68;--line:#E8E8E4;
-  --acc:#00C926;--acc-t:#007A17;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --pad:clamp(20px,5vw,48px);--ease:cubic-bezier(.2,.8,.2,1);
+  --bg:#FAFAF7;--ink:#17251F;--mute:#69736C;--line:#DEE4DC;
+  --acc:#C9F78C;--acc-t:#32623F;--dark:#172C23;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(22px,5vw,56px);--ease:cubic-bezier(.2,.8,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip;font-variant-numeric:tabular-nums}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
-.skip{position:fixed;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;transition:top .2s}
-.skip:focus{top:12px}
-.wrap{max-width:1040px;margin:0 auto;padding-inline:var(--pad)}
-.label{font-size:13px;color:var(--mute);letter-spacing:.01em}
-
-/* nav */
-.nav{position:fixed;inset:0 0 auto;z-index:50;border-bottom:1px solid transparent;transition:background .3s,border-color .3s}
-.nav.scrolled{background:rgba(252,252,251,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:15px;white-space:nowrap}
-.brand img{width:24px;height:24px}
-.links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;font-size:14px}
+::selection{background:var(--acc);color:var(--ink)}
+:focus-visible{outline:2px solid var(--acc-t);outline-offset:5px;border-radius:4px}
+.skip{position:fixed;left:16px;top:-80px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none}
+.skip:focus{top:16px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:var(--pad)}
+.label{font-size:12px;color:var(--mute);letter-spacing:.025em}
+/* A quiet floating navigation */
+.nav{position:fixed;inset:20px 0 auto;z-index:50;padding-inline:20px}
+.nav-in{max-width:1088px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;padding:0 18px 0 24px;border:1px solid rgba(222,228,220,.8);border-radius:999px;background:rgba(250,250,247,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:box-shadow .3s}
+.nav.scrolled .nav-in{box-shadow:0 8px 32px #17251F0A}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;font-size:14px;white-space:nowrap;flex-shrink:0;letter-spacing:-.03em}
+.brand img{width:23px;height:23px}
+.links{display:flex;align-items:center;gap:25px;list-style:none;margin:0;padding:0;font-size:12px}
 .links a{text-decoration:none;color:var(--mute);transition:color .2s}
 .links a:hover{color:var(--ink)}
-.links .btn,.links .btn:hover{color:#fff}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--ink);color:#fff;font:500 14.5px/1 var(--sans);text-decoration:none;white-space:nowrap;transition:background .2s}
-.btn:hover{background:#000}
-.btn span{transition:transform .2s var(--ease)}
-.btn:hover span{transform:translateX(3px)}
-.btn-sm{min-height:36px;padding:0 16px;font-size:13.5px}
-.link{font-size:14.5px;color:var(--mute);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:5px;transition:color .2s,text-decoration-color .2s;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
-.link:hover{color:var(--ink);text-decoration-color:currentColor}
-
-/* hero */
-.hero{padding:clamp(140px,22vh,220px) 0 clamp(72px,10vw,120px)}
-.hero-in{display:grid;gap:48px;align-items:end}
-@media(min-width:820px){.hero-in{grid-template-columns:1fr auto}}
-.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 28px}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--acc)}
-h1{font:400 clamp(3.2rem,8vw,6.5rem)/.95 var(--serif);letter-spacing:-.03em;margin:0}
-h1 em{font-style:italic}
-h1 sup{font:400 .22em/1 var(--sans);letter-spacing:0;color:var(--mute);vertical-align:2.6em;margin-left:.3em}
-.theme{margin:28px 0 0;font:400 clamp(1.5rem,2.7vw,2rem)/1.2 var(--serif);letter-spacing:-.015em}
-.theme em{font-style:italic;color:var(--acc-t)}
-.sub{max-width:44ch;margin:16px 0 0;font-size:clamp(17px,1.6vw,19px);line-height:1.55;color:var(--mute)}
-.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:36px}
-.count{margin:28px 0 0}
-.otter{width:clamp(150px,18vw,230px);cursor:pointer;-webkit-tap-highlight-color:transparent}
-.otter img{transform-origin:50% 100%}
+.links .btn,.links .btn:hover{color:var(--bg)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:24px;min-height:52px;padding:0 25px;border-radius:999px;background:var(--ink);color:var(--bg);font:500 13px/1 var(--sans);text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s,box-shadow .2s}
+.btn:hover{background:#2D4939;transform:translateY(-2px);box-shadow:0 6px 16px #17251F15}
+.btn span{font-size:20px;transition:transform .2s var(--ease)}
+.btn:hover span{transform:translateX(4px)}
+.btn-sm{min-height:38px;padding:0 18px;font-size:12px}
+.link{font-size:13px;color:var(--ink);text-decoration:underline;text-decoration-color:#A7B1A7;text-underline-offset:6px;transition:text-decoration-color .2s;background:none;border:0;padding:0;cursor:pointer;font-family:inherit}
+.link:hover{text-decoration-color:var(--ink)}
+/* Hero: editorial type, one confident visual */
+.hero{padding:160px 0 64px}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:56px;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 30px;font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+.dot{width:6px;height:6px;flex-shrink:0;border-radius:50%;background:#4B8B4F;box-shadow:0 0 0 4px #4B8B4F0D}
+h1{font:400 clamp(4rem,7.8vw,7rem)/.94 var(--serif);letter-spacing:-.045em;margin:0}
+h1 em{font-style:italic;color:var(--acc-t)}
+h1 sup{display:inline-block;font:400 11px/1 var(--sans);letter-spacing:.02em;color:var(--mute);vertical-align:top;margin:15px 0 0 12px}
+.theme{margin:28px 0 0;font:400 clamp(1.5rem,2.1vw,1.8rem)/1.25 var(--serif);letter-spacing:-.015em}
+.theme em{font-style:italic;white-space:nowrap}
+.sub{max-width:46ch;margin:14px 0 0;font-size:14px;line-height:1.8;color:var(--mute)}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:28px}
+.count{margin:20px 0 0;font-size:11px}
+.hero-art{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;min-height:480px;padding:26px 30px 30px;border-radius:24px;background:var(--dark);color:#F4F8EC;overflow:hidden;box-shadow:0 18px 45px #172C230B}
+.art-top,.art-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.art-top{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#C9D8C4}
+.art-top span:last-child{border:1px solid #FFFFFF25;border-radius:99px;padding:5px 9px;letter-spacing:.08em}
+.art-orbit{position:absolute;width:390px;aspect-ratio:1;top:40px;left:50%;transform:translateX(-50%);border:1px solid #C9F78C20;border-radius:50%;background:radial-gradient(circle,#C9F78C16 0,transparent 66%);z-index:-1}
+.art-orbit::before,.art-orbit::after{content:"";position:absolute;inset:40px;border:1px solid #C9F78C22;border-radius:50%}
+.art-orbit::after{inset:80px;background:#C9F78C0A}
+.art-cross{position:absolute;right:36px;top:108px;color:var(--acc);font-size:28px;font-weight:400;line-height:1}
+.otter{position:relative;z-index:1;display:block;align-self:center;width:220px;margin:15px 0 4px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.otter img{width:100%;transform-origin:50% 100%;filter:drop-shadow(0 14px 12px #00000030);transition:transform .35s var(--ease)}
+.otter:hover img{transform:translateY(-5px) rotate(-3deg)}
+.otter:focus-visible{outline-color:var(--acc)}
 .otter.hop img{animation:hop .6s var(--ease)}
 @keyframes hop{35%{transform:translateY(-24px) rotate(-5deg)}70%{transform:scale(1.04,.96)}100%{transform:none}}
-
-/* sections */
-.sec{padding:clamp(56px,7vw,88px) 0;border-top:1px solid var(--line)}
-.row{display:grid;gap:20px 64px}
-@media(min-width:820px){.row{grid-template-columns:200px 1fr}}
-h2{font:400 clamp(1.9rem,3vw,2.4rem)/1.05 var(--serif);letter-spacing:-.015em;margin:0}
-.lead{font:400 clamp(1.5rem,2.4vw,1.9rem)/1.3 var(--serif);letter-spacing:-.01em;margin:0 0 20px}
-.body{color:var(--mute);max-width:62ch;margin:0}
+.art-bottom{align-items:end}
+.art-bottom p{font:400 38px/.98 var(--serif);letter-spacing:-.02em;margin:0}
+.art-bottom p em{font-style:italic;color:var(--acc)}
+.art-arrow{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1px solid #FFFFFF35;font-size:23px;color:var(--acc)}
+.hero-hosts{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.hero-hosts>.label{margin:0;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.hosts{display:grid;gap:16px}
+.hosts .label{margin:0;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.logos{display:flex;align-items:center;gap:28px}
+.logos a{width:112px;display:flex;align-items:center;justify-content:center;min-height:44px;text-decoration:none;transition:opacity .2s}
+.logos a:hover{opacity:.6}
+.logos img{width:112px;height:34px;object-fit:contain}
+.logos img[alt="Riplo AI"]{width:90px;height:27px}
+.logo-divider{height:20px;width:1px;background:var(--line)}
+.hero-note{font-size:11px;color:var(--mute);margin:0;max-width:20ch;text-align:right;line-height:1.5}
+/* Fine rules and numbered sections */
+.sec{padding:76px 0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px 64px}
+h2{font:400 2.35rem/1.05 var(--serif);letter-spacing:-.025em;margin:0}
+.sec h2::before{display:block;margin-bottom:16px;font:400 10px/1 var(--sans);letter-spacing:.12em;color:#8A958A;content:attr(data-number)}
+.lead{font:400 clamp(1.65rem,2.5vw,2.2rem)/1.2 var(--serif);letter-spacing:-.015em;margin:0 0 24px;max-width:38ch}
+.body{font-size:14px;color:var(--mute);max-width:65ch;margin:0;line-height:1.85}
 .body+.body{margin-top:16px}
-.rv{opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv.in{opacity:1;transform:none}
-
-/* tracks */
+.rv{opacity:1;transform:none}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
 .tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:28px 0 0;padding:0}
-.tags li{padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px}
-
-/* rows */
-.rows{list-style:none;margin:0;padding:0}
-.rows li,.rows div{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
-.rows li:first-child,.rows div:first-child{padding-top:4px}
-.rows time,.rows dt{color:var(--mute)}
+.tags li{padding:7px 13px;background:#F0F2EC;border:1px solid #E5E9E0;border-radius:6px;font-size:11px;color:#56634F;transition:border-color .2s,background .2s}
+.tags li:hover{border-color:#BBCDAA;background:#EAF2DF}
+.rows{list-style:none;margin:0;padding:0;font-size:13px}
+.rows li,.rows div{display:grid;grid-template-columns:112px 1fr;gap:20px;padding:17px 0;border-bottom:1px solid var(--line)}
+.rows li:first-child,.rows div:first-child{padding-top:0}
+.rows time,.rows dt{color:var(--mute);font-size:12px}
 .rows dd{margin:0}
+.rows li{transition:padding .2s,background .2s}
+.rows li:hover{background:#F1F4ED;padding-left:10px}
 .rows .hot{color:var(--acc-t)}
+.rows .hot span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:#6D9A4D;margin-right:8px;vertical-align:middle}
 dl.rows{margin:0}
-.rows a{text-underline-offset:4px;text-decoration-color:var(--line)}
+.rows a{text-underline-offset:4px;text-decoration-color:#B4BEB0}
 .rows a:hover{text-decoration-color:currentColor}
-.after{margin-top:24px}
-
-/* prizes */
-.prizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
-.prize{padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff}
-.prize:first-child{background:#EFF7ED;border-color:#D7E8D2}
-.prize h3{margin:0 0 20px;font:500 14px/1.4 var(--sans)}
-.prize strong{display:block;font:400 clamp(2.4rem,5vw,3.4rem)/1 var(--serif);letter-spacing:-.03em}
-.prize p{margin:10px 0 0;font-size:13px;color:var(--mute)}
-@media(max-width:540px){.prizes{grid-template-columns:1fr}.prize{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center}.prize h3{margin:0}.prize strong{grid-column:2;grid-row:1 / 3}.prize p{margin:0}}
-
-/* register */
-.reg{padding:clamp(80px,12vw,140px) 0;border-top:1px solid var(--line);text-align:center}
-.reg h2{font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:-.025em}
-.reg h2 em{font-style:italic}
-.reg .body{margin:20px auto 32px;max-width:48ch}
-.reg .label{margin-top:16px}
-
-/* faq */
+.after{margin-top:28px}
+/* Prize podium */
+.prizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.prize{position:relative;padding:24px 20px;border:1px solid var(--line);border-radius:14px;background:#F5F6F0;transition:transform .25s var(--ease),box-shadow .25s}
+.prize:hover{transform:translateY(-5px);box-shadow:0 12px 20px #17251F08}
+.prize:first-child{background:var(--dark);border-color:var(--dark);color:#F4F8EC}
+.prize h3{margin:0 0 30px;font:400 11px/1.4 var(--sans);letter-spacing:.03em}
+.prize strong{display:block;font:400 clamp(2.8rem,5vw,4rem)/1 var(--serif);letter-spacing:-.035em}
+.prize:first-child strong{color:var(--acc)}
+.prize p{margin:14px 0 0;font-size:10px;color:var(--mute);line-height:1.6}
+.prize:first-child p{color:#B6C9B3}
+/* An invitation with a little punch */
+.reg{padding:24px var(--pad) 76px}
+.reg .wrap{max-width:1088px;position:relative;overflow:hidden;border-radius:24px;background:var(--dark);color:#F4F8EC;text-align:center;padding:64px 24px}
+.reg .label:first-child{color:var(--acc);font-size:10px;letter-spacing:.13em;text-transform:uppercase;margin:0 0 22px}
+.reg h2{font-size:clamp(3.4rem,7vw,6rem);letter-spacing:-.03em}
+.reg h2 em{font-style:italic;color:var(--acc)}
+.reg .body{margin:22px auto 28px;max-width:48ch;color:#BDCCB9;font-size:13px}
+.reg .btn{background:var(--acc);color:var(--ink);min-width:172px}
+.reg .btn:hover{background:#DDFBB9}
+.reg .label{margin:18px 0 0;color:#9FB39D;font-size:10px}
+/* Questions */
 .faq details{border-bottom:1px solid var(--line)}
-.faq details:first-child summary{padding-top:4px}
-.faq summary{display:flex;justify-content:space-between;gap:20px;padding:16px 0;cursor:pointer;list-style:none}
+.faq details:first-child summary{padding-top:0}
+.faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0;cursor:pointer;list-style:none;font-size:13px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--mute);font-size:18px;line-height:1.4;transition:transform .25s var(--ease)}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq p{margin:0;padding:0 0 18px;color:var(--mute);max-width:58ch}
-
-/* footer */
+.faq summary::after{content:"+";display:grid;place-items:center;flex-shrink:0;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;color:var(--mute);font-size:16px;line-height:1;transition:transform .25s var(--ease),background .25s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--acc);border-color:var(--acc)}
+.faq p{margin:0;padding:0 40px 20px 0;color:var(--mute);font-size:13px;max-width:58ch;line-height:1.8}
 footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px}
-.hosts{display:grid;gap:14px}
-.hosts .label{margin:0}
-.logos{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
-.logos img{height:26px;width:auto;opacity:.85;transition:opacity .2s}
-.logos a:hover img{opacity:1}
-.logos .devin-logo{height:36px}
-.foot p{margin:0}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px 32px}
+.foot p{margin:0;font-size:10px}
 .foot a{text-underline-offset:4px}
-
-@media(max-width:640px){
+@media(max-width:1000px){
+  .hero-in{gap:32px;grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr)}
+  .hero-art{padding:24px;min-height:440px}
+  .art-bottom p{font-size:32px}
+  .otter{width:190px}
+  .links{gap:19px}
+  .row{grid-template-columns:170px minmax(0,1fr);gap:24px 40px}
+  .prize{padding:22px 16px}
+}
+@media(max-width:800px){
   .links li:not(:last-child){display:none}
-  .rows li,.rows div{grid-template-columns:88px 1fr;gap:12px}
-  .hero-in{gap:32px}
-  .otter{width:120px;justify-self:end;margin-top:-8px}
+  .hero{padding-top:136px}
+  .hero-in{grid-template-columns:1fr}
+  h1{font-size:clamp(4.6rem,12vw,6.4rem)}
+  .hero-art{min-height:360px;max-width:none;padding:24px 30px}
+  .art-orbit{top:-30px;width:360px}
+  .otter{width:180px;margin:0}
+  .art-bottom p{font-size:32px}
+  .hero-hosts{margin-top:32px;flex-wrap:wrap;gap:18px 24px}
+  .hero-note{display:none}
+  .hero-hosts .logos{margin-left:auto}
+  .row{grid-template-columns:1fr;gap:30px}
+  .sec{padding:52px 0}
+  .sec h2::before{display:inline-block;margin:0 14px 0 0;vertical-align:middle}
+  h2{font-size:2.1rem}
+  .lead{max-width:45ch}
+  .reg{padding-bottom:52px}
+}
+@media(max-width:480px){
+  .nav{inset:12px 0 auto;padding-inline:12px}
+  .nav-in{height:58px;padding:0 10px 0 16px;gap:12px}
+  .brand{font-size:12px;gap:8px}
+  .brand img{width:20px;height:20px}
+  .btn-sm{min-height:36px;padding:0 15px;font-size:11px}
+  .hero{padding:120px 0 42px}
+  .eyebrow{font-size:9px;letter-spacing:.065em;margin-bottom:26px}
+  h1{font-size:clamp(3.8rem,15vw,5rem)}
+  h1 sup{font-size:9px;margin:9px 0 0 9px}
+  .theme{font-size:1.55rem;margin-top:24px;max-width:23ch}
+  .sub{font-size:13px;line-height:1.8}
+  .ctas{gap:22px;margin-top:25px}
+  .btn{min-height:48px;padding-inline:22px;gap:20px}
+  .btn-sm{min-height:36px;padding-inline:15px}
+  .link{font-size:12px}
+  .hero-art{min-height:330px;border-radius:18px;padding:23px}
+  .art-top{font-size:8px;letter-spacing:.1em}
+  .art-orbit{width:330px;top:-35px}
+  .art-cross{right:28px;top:90px}
+  .otter{width:165px}
+  .art-bottom p{font-size:30px}
+  .hero-hosts{display:grid;grid-template-columns:1fr;gap:14px;padding-top:22px}
+  .hero-hosts .logos{margin:0;justify-content:flex-start}
+  .logos{gap:22px}
+  .logos a{width:104px}
+  .logos img{width:104px;height:32px}
+  .logos img[alt="Riplo AI"]{width:84px;height:25px}
+  .lead{font-size:1.7rem}
+  .body{font-size:13px}
+  .rows li,.rows div{grid-template-columns:82px 1fr;gap:14px;font-size:12px}
+  .rows time,.rows dt{font-size:11px}
+  .prizes{grid-template-columns:1fr;gap:10px}
+  .prize{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center;padding:20px 22px}
+  .prize h3{margin:0;font-size:12px}
+  .prize strong{grid-column:2;grid-row:1 / 3;font-size:3rem}
+  .prize p{margin:0;font-size:10px}
+  .reg{padding-inline:12px}
+  .reg .wrap{border-radius:18px;padding:48px 24px}
+  .reg .body{font-size:12px}
+  .foot{align-items:start;gap:28px}
+  .foot #contact{max-width:30ch;line-height:1.9}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rv{opacity:1;transform:none}
+  .js .rv{opacity:1;transform:none}
 }
 </style>
 </head>
@@ -204,7 +285,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
         <li><a href="#details">Details</a></li>
         <li><a href="#prizes">Prizes</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a class="btn btn-sm" data-register href="#register">Register</a></li>
+        <li><a class="btn btn-sm" data-register href="https://luma.com/nz33orcg">Register</a></li>
       </ul>
     </nav>
   </div>
@@ -218,22 +299,39 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
         <h1 id="hero-title">Devin Oxford<br><em>FinHack</em><sup>2026</sup></h1>
         <p class="theme">Build the future of finance <em>with AI.</em></p>
         <p class="sub">Turn a real financial challenge into a working product in one day. Build with Devin, meet your team and bring your idea to life. No coding experience required.</p>
-        <p class="label">Co-hosted by <a href="https://devin.ai/" target="_blank" rel="noopener">Devin</a> and <a href="https://www.riplo.ai/" target="_blank" rel="noopener">Riplo AI</a></p>
+
         <div class="ctas">
-          <a class="btn" data-register href="#register">Register <span aria-hidden="true">→</span></a>
+          <a class="btn" data-register href="https://luma.com/nz33orcg">Register <span aria-hidden="true">→</span></a>
           <a class="link" href="#programme">See the programme</a>
         </div>
         <p class="count label" id="count" aria-live="off"></p>
       </div>
-      <div class="otter" id="otter">
-        <img src="/assets/otter.webp" width="339" height="309" alt="Devin the otter, coding on a laptop">
+      <div class="hero-art">
+        <div class="art-top"><span>Oxford · The build day</span><span>29.11.26</span></div>
+        <div class="art-orbit" aria-hidden="true"></div>
+        <span class="art-cross" aria-hidden="true">+</span>
+        <button class="otter" id="otter" type="button" aria-label="Make Devin the otter hop">
+          <img src="/assets/otter.webp" width="339" height="309" alt="Devin the otter, coding on a laptop">
+        </button>
+        <div class="art-bottom"><p>Small teams.<br><em>Big possibilities.</em></p><span class="art-arrow" aria-hidden="true">↗</span></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="hero-hosts">
+        <p class="label">Co-hosted by</p>
+        <div class="logos">
+          <a href="https://devin.ai/" target="_blank" rel="noopener" aria-label="Visit Devin"><img src="/assets/devin-logo.svg" alt="Devin" width="102" height="30"></a>
+          <span class="logo-divider" aria-hidden="true"></span>
+          <a href="https://www.riplo.ai/" target="_blank" rel="noopener" aria-label="Visit Riplo AI"><img src="/assets/riplo-logo.svg" alt="Riplo AI" width="102" height="30"></a>
+        </div>
+        <p class="hero-note">A day for ideas.<br>A place for builders.</p>
       </div>
     </div>
   </section>
 
   <section class="sec" id="about" aria-labelledby="about-title">
     <div class="wrap row">
-      <h2 id="about-title" class="rv">About</h2>
+      <h2 id="about-title" class="rv" data-number="01">About</h2>
       <div class="rv">
         <p class="lead">One day to build a working FinTech product, for business school students, finance professionals, entrepreneurs and engineers.</p>
         <p class="body">Teams tackle real challenges across the financial industry and build practical solutions with Devin. Whether you come from finance, technology or just have an idea worth exploring, you will work across disciplines and leave with something that runs.</p>
@@ -246,7 +344,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 
   <section class="sec" id="programme" aria-labelledby="prog-title">
     <div class="wrap row">
-      <h2 id="prog-title" class="rv">Programme</h2>
+      <h2 id="prog-title" class="rv" data-number="02">Programme</h2>
       <ol class="rows rv">
         <li><time datetime="2026-11-29T08:30">8.30 am</time><span>Doors open, breakfast and registration</span></li>
         <li><time datetime="2026-11-29T09:00">9.00 am</time><span>Welcome and introduction to Devin</span></li>
@@ -263,7 +361,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 
   <section class="sec" id="details" aria-labelledby="det-title">
     <div class="wrap row">
-      <h2 id="det-title" class="rv">Details</h2>
+      <h2 id="det-title" class="rv" data-number="03">Details</h2>
       <div class="rv">
         <dl class="rows">
           <div><dt>When</dt><dd>Sunday 29 November 2026, 8.30 am to 6.30 pm</dd></div>
@@ -279,7 +377,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 
   <section class="sec" id="prizes" aria-labelledby="prizes-title">
     <div class="wrap row">
-      <h2 id="prizes-title" class="rv">The prizes</h2>
+      <h2 id="prizes-title" class="rv" data-number="04">The prizes</h2>
       <div class="rv">
         <p class="lead">Keep building after the hackathon.</p>
         <p class="body">Every member of the top three teams receives Devin credits.</p>
@@ -294,16 +392,17 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 
   <section class="reg" id="register" aria-labelledby="reg-title">
     <div class="wrap rv">
+      <p class="label">Your idea deserves a day</p>
       <h2 id="reg-title">Save your <em>seat</em></h2>
       <p class="body">Everyone registers individually, including people joining with an existing team. Solo applicants are just as welcome and can form teams on the day.</p>
-      <a class="btn" data-register href="#register">Register <span aria-hidden="true">→</span></a>
+      <a class="btn" data-register href="https://luma.com/nz33orcg">Register <span aria-hidden="true">→</span></a>
       <p class="label">Registration subject to approval</p>
     </div>
   </section>
 
   <section class="sec" id="faq" aria-labelledby="faq-title">
     <div class="wrap row">
-      <h2 id="faq-title" class="rv">FAQ</h2>
+      <h2 id="faq-title" class="rv" data-number="05">FAQ</h2>
       <div class="faq rv">
         <details><summary>Do I need coding experience?</summary><p>No. Participants build using Devin, and teams mix finance, business and technical backgrounds.</p></details>
         <details><summary>Can I join without a team?</summary><p>Yes. Individual applicants can form teams on the day.</p></details>
@@ -320,9 +419,10 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     <div class="hosts">
       <p class="label">Co-hosted by</p>
       <div class="logos">
-      <a href="https://devin.ai/" target="_blank" rel="noopener"><img class="devin-logo" src="/assets/devin-logo.svg" alt="Devin" width="76" height="26" loading="lazy"></a>
-      <a href="https://www.riplo.ai/" target="_blank" rel="noopener"><img src="/assets/riplo-logo.svg" alt="Riplo AI" width="88" height="26" loading="lazy"></a>
-      </div>
+          <a href="https://devin.ai/" target="_blank" rel="noopener" aria-label="Visit Devin"><img src="/assets/devin-logo.svg" alt="Devin" width="102" height="30"></a>
+          <span class="logo-divider" aria-hidden="true"></span>
+          <a href="https://www.riplo.ai/" target="_blank" rel="noopener" aria-label="Visit Riplo AI"><img src="/assets/riplo-logo.svg" alt="Riplo AI" width="102" height="30"></a>
+        </div>
     </div>
     <p class="label" id="contact">© 2026 Devin Oxford FinHack</p>
   </div>
@@ -346,6 +446,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
   addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
   // ---- Reveal ----
+  document.documentElement.classList.add("js");
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: 0.1 });
   document.querySelectorAll(".rv").forEach(el => reduce ? el.classList.add("in") : io.observe(el));
 
