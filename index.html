@@ -110,7 +110,7 @@ h1 sup{display:inline-block;font:400 14px/1 var(--sans);letter-spacing:-.02em;co
 @keyframes hop{35%{transform:translateY(-24px) rotate(-5deg)}70%{transform:scale(1.04,.96)}100%{transform:none}}
 .art-caption{margin:0;text-align:center;font-size:15px;line-height:1.6;color:var(--mute);letter-spacing:-.02em}
 .art-caption strong{color:var(--ink);font-weight:500}
-.hero-hosts{display:flex;align-items:center;justify-content:space-between;gap:30px;margin-top:50px;padding:24px 0;border-top:1px solid var(--line)}
+.hero-hosts{display:flex;align-items:center;justify-content:flex-start;gap:40px;margin-top:50px;padding:24px 0;border-top:1px solid var(--line)}
 .hero-hosts>.label{margin:0;color:var(--mute)}
 .hosts{display:grid;gap:14px}
 .hosts .label{margin:0;font-size:14px}
@@ -267,11 +267,11 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
         <p class="eyebrow label"><span class="date"><span class="dot" aria-hidden="true"></span>29 November 2026</span><span>Sunday · Oxford</span></p>
         <h1 id="hero-title">Devin Oxford<br><em>FinHack</em><sup>2026</sup></h1>
         <p class="theme">Build the future of finance <em>with AI.</em></p>
-        <p class="sub">Turn a real financial challenge into a working product in one day. Build with Devin, meet your team and bring your idea to life. No coding experience required.</p>
+        <p class="sub">Build a FinTech product in one day with Devin. No coding experience required.</p>
 
         <div class="ctas">
           <a class="btn" data-register href="https://luma.com/nz33orcg">Register <span aria-hidden="true">→</span></a>
-          <a class="link" href="#programme">See the programme</a>
+          <a class="link" href="#programme">Programme</a>
         </div>
         <p class="count label" id="count" aria-live="off"></p>
       </div>
@@ -281,7 +281,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
             <img src="/assets/otter.webp" width="339" height="309" alt="Devin the otter, coding on a laptop">
           </button>
         </div>
-        <p class="art-caption">An idea in the morning.<br><strong>A demo by the evening.</strong></p>
+        <p class="art-caption">From idea<br><strong>to demo.</strong></p>
       </div>
     </div>
     <div class="wrap">
@@ -292,7 +292,6 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
           <span class="logo-divider" aria-hidden="true"></span>
           <a href="https://www.riplo.ai/" target="_blank" rel="noopener" aria-label="Visit Riplo AI"><img src="/assets/riplo-logo.svg" alt="Riplo AI" width="102" height="30"></a>
         </div>
-        <p class="hero-note">One day. Real products.<br>No coding experience required.</p>
       </div>
     </div>
   </section>
@@ -301,8 +300,8 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     <div class="wrap row">
       <h2 id="about-title" class="rv" data-number="01">About</h2>
       <div class="rv">
-        <p class="lead">One day to build a working FinTech product, for business school students, finance professionals, entrepreneurs and engineers.</p>
-        <p class="body">Teams tackle real challenges across the financial industry and build practical solutions with Devin. Whether you come from finance, technology or just have an idea worth exploring, you will work across disciplines and leave with something that runs.</p>
+        <p class="lead">Finance meets AI. You build what’s next.</p>
+        <p class="body">For students, finance professionals, founders and engineers. Team up, solve a financial challenge and build with Devin.</p>
         <ul class="tags" aria-label="Challenge areas">
           <li>AI financial agents</li><li>Investment platforms</li><li>Trading tools</li><li>Digital banking</li><li>Payments</li><li>Lending</li><li>Personal finance</li>
         </ul>
@@ -314,15 +313,15 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     <div class="wrap row">
       <h2 id="prog-title" class="rv" data-number="02">Programme</h2>
       <ol class="rows rv">
-        <li><time datetime="2026-11-29T08:30">8.30 am</time><span>Doors open, breakfast and registration</span></li>
-        <li><time datetime="2026-11-29T09:00">9.00 am</time><span>Welcome and introduction to Devin</span></li>
+        <li><time datetime="2026-11-29T08:30">8.30 am</time><span>Check-in &amp; breakfast</span></li>
+        <li><time datetime="2026-11-29T09:00">9.00 am</time><span>Welcome &amp; Devin intro</span></li>
         <li><time datetime="2026-11-29T10:00">10.00 am</time><span>Team formation</span></li>
         <li class="hot"><time datetime="2026-11-29T10:15">10.15 am</time><span>Hacking begins</span></li>
         <li><time datetime="2026-11-29T13:00">1.00 pm</time><span>Lunch</span></li>
         <li class="hot"><time datetime="2026-11-29T15:30">3.30 pm</time><span>Submission deadline</span></li>
-        <li><time datetime="2026-11-29T16:30">4.30 pm</time><span>Demos, 5 minutes per team</span></li>
-        <li><time datetime="2026-11-29T17:30">5.30 pm</time><span>Judges' deliberation</span></li>
-        <li><time datetime="2026-11-29T18:00">6.00 pm</time><span>Awards and closing</span></li>
+        <li><time datetime="2026-11-29T16:30">4.30 pm</time><span>Demos · 5 min per team</span></li>
+        <li><time datetime="2026-11-29T17:30">5.30 pm</time><span>Judging</span></li>
+        <li><time datetime="2026-11-29T18:00">6.00 pm</time><span>Awards &amp; closing</span></li>
       </ol>
     </div>
   </section>
@@ -332,11 +331,10 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
       <h2 id="det-title" class="rv" data-number="03">Details</h2>
       <div class="rv">
         <dl class="rows">
-          <div><dt>When</dt><dd>Sunday 29 November 2026, 8.30 am to 6.30 pm</dd></div>
+          <div><dt>When</dt><dd>29 November 2026 · 8.30 am–6.30 pm</dd></div>
           <div><dt>Where</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Oxford+Edge%2C+37+St+Giles%2C+Oxford+OX1+3LD" target="_blank" rel="noopener">Oxford Edge, 37 St Giles, Oxford OX1 3LD</a></dd></div>
-          <div><dt>Teams</dt><dd>2–4 people, or form one on the day</dd></div>
-          <div><dt>Included</dt><dd>Access to Devin, meals and refreshments all day</dd></div>
-          <div><dt>Prizes</dt><dd>Up to $500 in Devin credits per person. <a href="#prizes">See the prizes</a></dd></div>
+          <div><dt>Teams</dt><dd>2–4 people · Solo entries welcome</dd></div>
+          <div><dt>Included</dt><dd>Devin access, meals &amp; refreshments</dd></div>
         </dl>
         <p class="after"><button class="link" type="button" id="ics">Add to calendar</button></p>
       </div>
@@ -347,8 +345,8 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     <div class="wrap row">
       <h2 id="prizes-title" class="rv" data-number="04">The prizes</h2>
       <div class="rv">
-        <p class="lead">Keep building after the hackathon.</p>
-        <p class="body">Every member of the top three teams receives Devin credits.</p>
+        <p class="lead">Build. Win. Keep going.</p>
+        <p class="body">Devin credits for each winning team member.</p>
         <div class="prizes">
           <article class="prize"><h3>1st place</h3><strong>$500</strong><p>Devin credits per person</p></article>
           <article class="prize"><h3>2nd place</h3><strong>$200</strong><p>Devin credits per person</p></article>
@@ -362,7 +360,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     <div class="wrap rv">
       <p class="label">29 November · Oxford</p>
       <h2 id="reg-title">Make your<br><em>next move.</em></h2>
-      <p class="body">Everyone registers individually, including people joining with an existing team. Solo applicants are just as welcome and can form teams on the day.</p>
+      <p class="body">Register individually. Come solo or with a team.</p>
       <a class="btn" data-register href="https://luma.com/nz33orcg">Register <span aria-hidden="true">→</span></a>
       <p class="label">Registration subject to approval</p>
     </div>
@@ -372,11 +370,10 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     <div class="wrap row">
       <h2 id="faq-title" class="rv" data-number="05">FAQ</h2>
       <div class="faq rv">
-        <details><summary>Do I need coding experience?</summary><p>No. Participants build using Devin, and teams mix finance, business and technical backgrounds.</p></details>
-        <details><summary>Can I join without a team?</summary><p>Yes. Individual applicants can form teams on the day.</p></details>
-        <details><summary>My team is already formed. Do we register together?</summary><p>No, every participant must register individually.</p></details>
-        <details><summary>Is food provided?</summary><p>Yes, refreshments and meals are provided throughout the day.</p></details>
-        <details><summary>What can we win?</summary><p>Each member of the first-place team receives $500 in Devin credits. Each member of the second- and third-place teams receives $200 in Devin credits.</p></details>
+        <details><summary>Do I need coding experience?</summary><p>No. Build with Devin, whatever your background.</p></details>
+        <details><summary>Can I come solo?</summary><p>Yes. Form a team on the day.</p></details>
+        <details><summary>Do teams register together?</summary><p>No. Everyone registers individually.</p></details>
+        <details><summary>Is food provided?</summary><p>Yes. Meals and refreshments are included.</p></details>
       </div>
     </div>
   </section>
@@ -403,10 +400,9 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
   const CONTACT_EMAIL = "lina4893@ox.ac.uk";
 
   const isSet = v => v && !v.startsWith("[");
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (isSet(REGISTRATION_LINK)) document.querySelectorAll("[data-register]").forEach(a => { a.href = REGISTRATION_LINK; a.target = "_blank"; a.rel = "noopener"; });
-  if (isSet(CONTACT_EMAIL)) { const c = document.getElementById("contact"); const a = document.createElement("a"); a.href = "mailto:" + CONTACT_EMAIL; a.textContent = CONTACT_EMAIL; c.append(" · ", a); }
+  if (isSet(CONTACT_EMAIL)) { const c = document.getElementById("contact"); const a = document.createElement("a"); a.href = "mailto:" + CONTACT_EMAIL; a.textContent = "Contact us"; c.append(" · ", a); }
 
   // ---- Nav ----
   const nav = document.getElementById("nav");
