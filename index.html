@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Devin Oxford FinHack 2026 | One-Day FinTech Hackathon in Oxford</title>
-<meta name="description" content="Devin Oxford FinHack 2026 is a one-day FinTech hackathon powered by Devin, the AI software engineer from Cognition, taking place in Oxford on Sunday 29 November 2026.">
+<meta name="description" content="Build the future of finance with AI at Devin Oxford FinHack 2026, co-hosted by Devin and Riplo AI in Oxford on Sunday 29 November 2026. No coding experience required.">
 <meta name="theme-color" content="#FCFCFB">
 <link rel="canonical" href="https://oxford-finhack.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Devin Oxford FinHack 2026">
 <meta property="og:title" content="Devin Oxford FinHack 2026 | One-Day FinTech Hackathon in Oxford">
-<meta property="og:description" content="Devin Oxford FinHack 2026 is a one-day FinTech hackathon powered by Devin, the AI software engineer from Cognition, taking place in Oxford on Sunday 29 November 2026.">
+<meta property="og:description" content="Build the future of finance with AI at Devin Oxford FinHack 2026, co-hosted by Devin and Riplo AI in Oxford on Sunday 29 November 2026. No coding experience required.">
 <meta property="og:url" content="https://oxford-finhack.vercel.app/">
 <meta property="og:image" content="https://oxford-finhack.vercel.app/og.png">
 <meta property="og:image:width" content="1200">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Devin Oxford FinHack 2026 | One-Day FinTech Hackathon in Oxford">
-<meta name="twitter:description" content="Devin Oxford FinHack 2026 is a one-day FinTech hackathon powered by Devin, the AI software engineer from Cognition, taking place in Oxford on Sunday 29 November 2026.">
+<meta name="twitter:description" content="Build the future of finance with AI at Devin Oxford FinHack 2026, co-hosted by Devin and Riplo AI in Oxford on Sunday 29 November 2026. No coding experience required.">
 <meta name="twitter:image" content="https://oxford-finhack.vercel.app/og.png">
 <link rel="icon" href="/assets/devin-symbol.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="/assets/otter.webp" type="image/webp">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Devin Oxford FinHack 2026",
-  "description": "Devin Oxford FinHack 2026 is a one-day FinTech hackathon powered by Devin, the AI software engineer from Cognition, taking place in Oxford on Sunday 29 November 2026.",
+  "description": "Build the future of finance with AI at Devin Oxford FinHack 2026, co-hosted by Devin and Riplo AI in Oxford on Sunday 29 November 2026. No coding experience required.",
   "startDate": "2026-11-29T08:30:00+00:00",
   "endDate": "2026-11-29T18:30:00+00:00",
   "eventStatus": "https://schema.org/EventScheduled",
@@ -48,11 +48,10 @@
       "addressCountry": "GB"
     }
   },
-  "organizer": {
-    "@type": "Organization",
-    "name": "Devin by Cognition",
-    "url": "https://devin.ai/"
-  },
+  "organizer": [
+    { "@type": "Organization", "name": "Devin", "url": "https://devin.ai/" },
+    { "@type": "Organization", "name": "Riplo AI", "url": "https://www.riplo.ai/" }
+  ],
   "image": "https://oxford-finhack.vercel.app/og.png",
   "url": "https://oxford-finhack.vercel.app/"
 }
@@ -104,7 +103,9 @@ a{color:inherit}
 h1{font:400 clamp(3.2rem,8vw,6.5rem)/.95 var(--serif);letter-spacing:-.03em;margin:0}
 h1 em{font-style:italic}
 h1 sup{font:400 .22em/1 var(--sans);letter-spacing:0;color:var(--mute);vertical-align:2.6em;margin-left:.3em}
-.sub{max-width:40ch;margin:28px 0 0;font-size:clamp(17px,1.6vw,19px);line-height:1.55;color:var(--mute)}
+.theme{margin:28px 0 0;font:400 clamp(1.5rem,2.7vw,2rem)/1.2 var(--serif);letter-spacing:-.015em}
+.theme em{font-style:italic;color:var(--acc-t)}
+.sub{max-width:44ch;margin:16px 0 0;font-size:clamp(17px,1.6vw,19px);line-height:1.55;color:var(--mute)}
 .ctas{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:36px}
 .count{margin:28px 0 0}
 .otter{width:clamp(150px,18vw,230px);cursor:pointer;-webkit-tap-highlight-color:transparent}
@@ -139,6 +140,15 @@ dl.rows{margin:0}
 .rows a:hover{text-decoration-color:currentColor}
 .after{margin-top:24px}
 
+/* prizes */
+.prizes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:24px}
+.prize{padding:24px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.prize:first-child{background:#EFF7ED;border-color:#D7E8D2}
+.prize h3{margin:0 0 20px;font:500 14px/1.4 var(--sans)}
+.prize strong{display:block;font:400 clamp(2.4rem,5vw,3.4rem)/1 var(--serif);letter-spacing:-.03em}
+.prize p{margin:10px 0 0;font-size:13px;color:var(--mute)}
+@media(max-width:540px){.prizes{grid-template-columns:1fr}.prize{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center}.prize h3{margin:0}.prize strong{grid-column:2;grid-row:1 / 3}.prize p{margin:0}}
+
 /* register */
 .reg{padding:clamp(80px,12vw,140px) 0;border-top:1px solid var(--line);text-align:center}
 .reg h2{font-size:clamp(2.6rem,6vw,4.5rem);letter-spacing:-.025em}
@@ -158,9 +168,12 @@ dl.rows{margin:0}
 /* footer */
 footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 32px}
-.logos{display:flex;align-items:center;gap:20px}
+.hosts{display:grid;gap:14px}
+.hosts .label{margin:0}
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:28px}
 .logos img{height:26px;width:auto;opacity:.85;transition:opacity .2s}
 .logos a:hover img{opacity:1}
+.logos .devin-logo{height:36px}
 .foot p{margin:0}
 .foot a{text-underline-offset:4px}
 
@@ -189,6 +202,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
         <li><a href="#about">About</a></li>
         <li><a href="#programme">Programme</a></li>
         <li><a href="#details">Details</a></li>
+        <li><a href="#prizes">Prizes</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a class="btn btn-sm" data-register href="#register">Register</a></li>
       </ul>
@@ -202,7 +216,9 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
       <div>
         <p class="eyebrow label"><span class="dot" aria-hidden="true"></span>Sunday 29 November 2026 · Oxford</p>
         <h1 id="hero-title">Devin Oxford<br><em>FinHack</em><sup>2026</sup></h1>
-        <p class="sub">A one-day FinTech hackathon powered by Devin, the AI software engineer from Cognition. No coding experience required.</p>
+        <p class="theme">Build the future of finance <em>with AI.</em></p>
+        <p class="sub">Turn a real financial challenge into a working product in one day. Build with Devin, meet your team and bring your idea to life. No coding experience required.</p>
+        <p class="label">Co-hosted by <a href="https://devin.ai/" target="_blank" rel="noopener">Devin</a> and <a href="https://www.riplo.ai/" target="_blank" rel="noopener">Riplo AI</a></p>
         <div class="ctas">
           <a class="btn" data-register href="#register">Register <span aria-hidden="true">→</span></a>
           <a class="link" href="#programme">See the programme</a>
@@ -254,9 +270,24 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
           <div><dt>Where</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Oxford+Edge%2C+37+St+Giles%2C+Oxford+OX1+3LD" target="_blank" rel="noopener">Oxford Edge, 37 St Giles, Oxford OX1 3LD</a></dd></div>
           <div><dt>Teams</dt><dd>2–4 people, or form one on the day</dd></div>
           <div><dt>Included</dt><dd>Access to Devin, meals and refreshments all day</dd></div>
-          <div><dt>Prizes</dt><dd>Devin credits for outstanding teams</dd></div>
+          <div><dt>Prizes</dt><dd>Up to $500 in Devin credits per person. <a href="#prizes">See the prizes</a></dd></div>
         </dl>
         <p class="after"><button class="link" type="button" id="ics">Add to calendar</button></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="prizes" aria-labelledby="prizes-title">
+    <div class="wrap row">
+      <h2 id="prizes-title" class="rv">The prizes</h2>
+      <div class="rv">
+        <p class="lead">Keep building after the hackathon.</p>
+        <p class="body">Every member of the top three teams receives Devin credits.</p>
+        <div class="prizes">
+          <article class="prize"><h3>1st place</h3><strong>$500</strong><p>Devin credits per person</p></article>
+          <article class="prize"><h3>2nd place</h3><strong>$200</strong><p>Devin credits per person</p></article>
+          <article class="prize"><h3>3rd place</h3><strong>$200</strong><p>Devin credits per person</p></article>
+        </div>
       </div>
     </div>
   </section>
@@ -278,7 +309,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
         <details><summary>Can I join without a team?</summary><p>Yes. Individual applicants can form teams on the day.</p></details>
         <details><summary>My team is already formed. Do we register together?</summary><p>No, every participant must register individually.</p></details>
         <details><summary>Is food provided?</summary><p>Yes, refreshments and meals are provided throughout the day.</p></details>
-        <details><summary>What can we win?</summary><p>Devin credits are awarded to outstanding teams.</p></details>
+        <details><summary>What can we win?</summary><p>Each member of the first-place team receives $500 in Devin credits. Each member of the second- and third-place teams receives $200 in Devin credits.</p></details>
       </div>
     </div>
   </section>
@@ -286,9 +317,12 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 
 <footer>
   <div class="wrap foot">
-    <div class="logos">
-      <a href="https://devin.ai/" target="_blank" rel="noopener"><img src="/assets/devin-logo.svg" alt="Devin" width="76" height="26" loading="lazy"></a>
-      <a href="https://cognition.ai/" target="_blank" rel="noopener"><img src="/assets/cognition-logo.svg" alt="Cognition" width="102" height="26" loading="lazy"></a>
+    <div class="hosts">
+      <p class="label">Co-hosted by</p>
+      <div class="logos">
+      <a href="https://devin.ai/" target="_blank" rel="noopener"><img class="devin-logo" src="/assets/devin-logo.svg" alt="Devin" width="76" height="26" loading="lazy"></a>
+      <a href="https://www.riplo.ai/" target="_blank" rel="noopener"><img src="/assets/riplo-logo.svg" alt="Riplo AI" width="88" height="26" loading="lazy"></a>
+      </div>
     </div>
     <p class="label" id="contact">© 2026 Devin Oxford FinHack</p>
   </div>
@@ -296,7 +330,7 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
 
 <script>
 (() => {
-  // ---- Config: replace these two placeholders ----
+  // ---- Event links ----
   const REGISTRATION_LINK = "https://luma.com/nz33orcg";
   const CONTACT_EMAIL = "lina4893@ox.ac.uk";
 
@@ -337,8 +371,9 @@ footer{border-top:1px solid var(--line);padding:40px 0 calc(40px + env(safe-area
     const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Devin Oxford FinHack//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", "BEGIN:VEVENT",
       "UID:devin-oxford-finhack-2026@oxford-finhack", "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""),
       "DTSTART:20261129T083000Z", "DTEND:20261129T183000Z", "SUMMARY:Devin Oxford FinHack 2026",
-      "DESCRIPTION:A one-day FinTech hackathon powered by Devin\\, the AI software engineer from Cognition.",
-      "LOCATION:Oxford Edge\\, 37 St Giles\\, Oxford OX1 3LD", "URL:" + location.origin + "/", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+      "DESCRIPTION:Build the future of finance with AI.",
+      "  Co-hosted by Devin and Riplo AI.",
+      "LOCATION:Oxford Edge\\, 37 St Giles\\, Oxford OX1 3LD", "URL:" + location.origin + "/", "END:VEVENT", "END:VCALENDAR"].join("\r\n") + "\r\n";
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
     a.download = "devin-oxford-finhack-2026.ics"; document.body.append(a); a.click(); a.remove();
